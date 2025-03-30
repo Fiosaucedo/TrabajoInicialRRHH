@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aptin</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.full.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Aptin </div>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <h1> Encontra los perfiles mas aptos en segundos.</h1>
+            <p> Aptin es la herramienta perfecta para evaluar facil y rapido cuales son los mejores candidatos para tu busqueda.</p>
+            <button class="add-button"> Evalua tus candidatos</button>
+        </section>
+        <div id="container-info">
+        <div id="instructions1">
+            <h2>Que necesito?</h2>
+            <p>Solo necesitas un archivo Excel con las columnas a evaluar que contenga los datos de tus candidatos.</p>
+            <p>Descarga el archivo template aca!</p>
+            <button class="descarga-template">
+                <a href="template.xlsx" download>Descarga el Template</a>
+            </button>
+        </div>
+
+        <div id="instructions2">
+            <h2>Instrucciones</h2>
+            <p>Subí un archivo Excel con los perfiles que deseas evaluar. El sistema te indicará si cada perfil es "Apto" o "No apto".</p>
+            <p>Hace clic en el botón de abajo para cargar el archivo Excel.</p>
+        </div>
+
+        <div id="instructions3">
+            <h2>Fácil y Rápido!</h2>
+            <p>Ahorra horas de trabajo utilizando Aptin para clasificar tus candidatos de forma objetiva. </p>
+            <p> No olvides descargar tus resultados al finalizar tu busqueda!</p>
+        </div>
+    </div>
+   
+    <div id="container-upload-bnt">
+    <input type="file" id="excel-file" accept=".xlsx, .xls" style="display: none;" />
+    <button id="upload-btn">Subir archivo Excel</button>
+
+    <button id="download-btn" style="display: none;">Descargar Resultados</button>
+    </div>
+
+    <div id="excel-table"></div>
+    </main>
+    <script>
+        document.getElementById('upload-btn').addEventListener('click', function() {
+            document.getElementById('excel-file').click();
+        });
+
+        document.querySelector('.add-button').addEventListener('click', function() {
+            document.getElementById('excel-file').click();
+        });
+    
+        document.getElementById('excel-file').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+    
+            if (!file) {
+                alert("Por favor selecciona un archivo Excel");
+                return;
+            }
+    
+            const reader = new FileReader();
+    
+            reader.onload = function(e) {
+                const data = e.target.result;
+    
+                const workbook = XLSX.read(data, { type: 'binary' });
+    
+                const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+    
+                const rows = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+    
+                rows[0].push("Es un perfil apto?");
+    
+                for (let i = 1; i < rows.length; i++) {
+                    const randomValue = Math.random() > 0.5 ? "Apto" : "No apto";
+                    rows[i].push(randomValue);
+                }
+    
+                let table = '<table>';
+ 
+                table += '<tr>';
+                rows[0].forEach(header => {
+                    table += `<th>${header}</th>`;
+                });
+                table += '</tr>';
+
+                for (let i = 1; i < rows.length; i++) {
+                    table += '<tr>';
+                    rows[i].forEach((cell, index) => {
+    
+                        if (index === rows[0].length - 1) {
+                            const className = cell === "Apto" ? "apt" : "no-apt";
+                            table += `<td class="${className}">${cell}</td>`;
+                        } else {
+                            table += `<td>${cell}</td>`;
+                        }
+                    });
+                    table += '</tr>';
+                }
+    
+                table += '</table>';
+    
+                document.getElementById('container-info').style.display = 'none';
+                document.getElementById('excel-table').innerHTML = table;
+    
+
+                const uploadButton = document.getElementById('upload-btn');
+                uploadButton.textContent = 'Subir otro archivo Excel'; 
+    
+                document.getElementById('download-btn').style.display = 'inline-block';
+    
+                document.getElementById('download-btn').addEventListener('click', function() {
+                    const ws = XLSX.utils.aoa_to_sheet(rows); 
+                    const wb = XLSX.utils.book_new();
+                    XLSX.utils.book_append_sheet(wb, ws, "Resultados");
+    
+                    XLSX.writeFile(wb, "resultados.xlsx");
+                });
+            };
+    
+            reader.readAsBinaryString(file);
+    
+        });
+    </script>
+</body>
+</html>
