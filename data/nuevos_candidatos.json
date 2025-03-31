@@ -1,0 +1,42 @@
+[
+  {
+    "Nombre": "Agustin",
+    "Apellido": "Mendez",
+    "Años de experiencia": 7,
+    "Nivel educativo": "universitario",
+    "Habilidades": "python, sql",
+    "Edad": 29
+  },
+  {
+    "Nombre": "Florencia",
+    "Apellido": "Benitez",
+    "Años de experiencia": 2,
+    "Nivel educativo": "secundario",
+    "Habilidades": "java, c++",
+    "Edad": 22
+  },
+  {
+    "Nombre": "Nicolas",
+    "Apellido": "Peralta",
+    "Años de experiencia": 5,
+    "Nivel educativo": "terciario",
+    "Habilidades": "docker, python",
+    "Edad": 30
+  },
+  {
+    "Nombre": "Camila",
+    "Apellido": "Vazquez",
+    "Años de experiencia": 10,
+    "Nivel educativo": "universitario",
+    "Habilidades": "c++, docker, sql",
+    "Edad": 35
+  },
+  {
+    "Nombre": "Ezequiel",
+    "Apellido": "Ramos",
+    "Años de experiencia": 4,
+    "Nivel educativo": "terciario",
+    "Habilidades": "java, python, c++",
+    "Edad": 27
+  }
+]

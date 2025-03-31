@@ -1,0 +1,182 @@
+[
+  {
+    "Nombre": "Juan",
+    "Apellido": "Perez",
+    "Años de experiencia": 1,
+    "Nivel educativo": "secundario",
+    "Habilidades": "python, java",
+    "Edad": 25,
+    "Apto": "No"
+  },
+  {
+    "Nombre": "Pedro",
+    "Apellido": "Garcia",
+    "Años de experiencia": 5,
+    "Nivel educativo": "universitario",
+    "Habilidades": "c++, docker",
+    "Edad": 30,
+    "Apto": "Si"
+  },
+  {
+    "Nombre": "Maria",
+    "Apellido": "Garcia",
+    "Años de experiencia": 3,
+    "Nivel educativo": "universitario",
+    "Habilidades": "java, sql",
+    "Edad": 20,
+    "Apto": "No"
+  },
+  {
+    "Nombre": "Ana",
+    "Apellido": "Garcia",
+    "Años de experiencia": 13,
+    "Nivel educativo": "universitario",
+    "Habilidades": "python, java, c++",
+    "Edad": 25,
+    "Apto": "Si"
+  },
+  {
+    "Nombre": "Luis",
+    "Apellido": "Lopez",
+    "Años de experiencia": 8,
+    "Nivel educativo": "terciario",
+    "Habilidades": "c++, sql",
+    "Edad": 28,
+    "Apto": "Si"
+  },
+  {
+    "Nombre": "Carla",
+    "Apellido": "Fernandez",
+    "Años de experiencia": 2,
+    "Nivel educativo": "secundario",
+    "Habilidades": "python",
+    "Edad": 23,
+    "Apto": "No"
+  },
+  {
+    "Nombre": "Sofia",
+    "Apellido": "Martinez",
+    "Años de experiencia": 4,
+    "Nivel educativo": "universitario",
+    "Habilidades": "docker, sql",
+    "Edad": 26,
+    "Apto": "Si"
+  },
+  {
+    "Nombre": "Diego",
+    "Apellido": "Suarez",
+    "Años de experiencia": 7,
+    "Nivel educativo": "terciario",
+    "Habilidades": "java, python",
+    "Edad": 32,
+    "Apto": "Si"
+  },
+  {
+    "Nombre": "Fernando",
+    "Apellido": "Ramirez",
+    "Años de experiencia": 10,
+    "Nivel educativo": "universitario",
+    "Habilidades": "c++, docker, sql",
+    "Edad": 35,
+    "Apto": "Si"
+  },
+  {
+    "Nombre": "Valeria",
+    "Apellido": "Torres",
+    "Años de experiencia": 6,
+    "Nivel educativo": "secundario",
+    "Habilidades": "java",
+    "Edad": 29,
+    "Apto": "No"
+  },
+  {
+    "Nombre": "Pablo",
+    "Apellido": "Alvarez",
+    "Años de experiencia": 9,
+    "Nivel educativo": "universitario",
+    "Habilidades": "python, c++",
+    "Edad": 31,
+    "Apto": "Si"
+  },
+  {
+    "Nombre": "Lucia",
+    "Apellido": "Gomez",
+    "Años de experiencia": 12,
+    "Nivel educativo": "universitario",
+    "Habilidades": "java, docker",
+    "Edad": 24,
+    "Apto": "Si"
+  },
+  {
+    "Nombre": "Martina",
+    "Apellido": "Sanchez",
+    "Años de experiencia": 0,
+    "Nivel educativo": "terciario",
+    "Habilidades": "python, sql",
+    "Edad": 22,
+    "Apto": "No"
+  },
+  {
+    "Nombre": "Hugo",
+    "Apellido": "Morales",
+    "Años de experiencia": 15,
+    "Nivel educativo": "universitario",
+    "Habilidades": "c++, docker, python",
+    "Edad": 40,
+    "Apto": "Si"
+  },
+  {
+    "Nombre": "Elena",
+    "Apellido": "Ortega",
+    "Años de experiencia": 11,
+    "Nivel educativo": "secundario",
+    "Habilidades": "sql",
+    "Edad": 38,
+    "Apto": "No"
+  },
+  {
+    "Nombre": "Ricardo",
+    "Apellido": "Navarro",
+    "Años de experiencia": 14,
+    "Nivel educativo": "terciario",
+    "Habilidades": "java, python, c++",
+    "Edad": 37,
+    "Apto": "Si"
+  },
+  {
+    "Nombre": "Gabriela",
+    "Apellido": "Delgado",
+    "Años de experiencia": 5,
+    "Nivel educativo": "universitario",
+    "Habilidades": "docker, sql",
+    "Edad": 27,
+    "Apto": "Si"
+  },
+  {
+    "Nombre": "Daniel",
+    "Apellido": "Rojas",
+    "Años de experiencia": 6,
+    "Nivel educativo": "terciario",
+    "Habilidades": "java, c++",
+    "Edad": 30,
+    "Apto": "Si"
+  },
+  {
+    "Nombre": "Andrea",
+    "Apellido": "Mendoza",
+    "Años de experiencia": 3,
+    "Nivel educativo": "secundario",
+    "Habilidades": "python, docker",
+    "Edad": 21,
+    "Apto": "No"
+  },
+  {
+    "Nombre": "Jorge",
+    "Apellido": "Castillo",
+    "Años de experiencia": 8,
+    "Nivel educativo": "universitario",
+    "Habilidades": "sql, c++",
+    "Edad": 33,
+    "Apto": "Si"
+  }
+]
