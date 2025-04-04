@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
     padding-top: 2rem;
     min-height: 35vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/img/bussiness-people-working-in-team-in-an-office-scaled1.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/bussiness-people-working-in-team-in-an-office-scaled1.jpg');
     background-size: cover;
     background-position: center;
     color: white;
