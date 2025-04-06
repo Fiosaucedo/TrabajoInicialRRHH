@@ -51,6 +51,10 @@
         <button id="download-btn" style="display: none;">Descargar Resultados</button>
     </div>
 
+    <div id="filter-buttons" style="margin-bottom: 16px; display: none;">
+      <button id="toggle-aptos" class="filter-toggle" data-enabled="true">Aptos</button>
+      <button id="toggle-noaptos" class="filter-toggle" data-enabled="true">No Aptos</button>
+    </div>
     <div id="excel-table"></div>
 </main>
 <script>
@@ -93,7 +97,6 @@
         function mostrarResultados(data) {
             let table = '<table><tr>';
 
-            console.log(data)
             // Encabezados
             Object.keys(data[0]).forEach(header => {
                 table += `<th>${header}</th>`;
@@ -103,12 +106,14 @@
             // Filas
             data.forEach(row => {
                 table += '<tr>';
-                Object.entries(row).forEach(([key, value], index) => {
+                Object.entries(row).forEach(([key, value]) => {
+                    const displayValue = (value === null || value === undefined || value === "") ? "—" : value;
+
                     if (key === "Apto") {
-                        const className = value === "Apto" ? "apt" : "no-apt";
-                        table += `<td class="${className}">${value}</td>`;
+                        const className = value === "Si" ? "apt" : "no-apt";
+                        table += `<td class="${className}">${displayValue}</td>`;
                     } else {
-                        table += `<td>${value}</td>`;
+                        table += `<td>${displayValue}</td>`;
                     }
                 });
                 table += '</tr>';
@@ -119,6 +124,27 @@
             document.getElementById('container-info').style.display = 'none';
             document.getElementById('upload-btn').textContent = 'Subir otro archivo Excel';
             document.getElementById('download-btn').style.display = 'inline-block';
+            document.getElementById('filter-buttons').style.display = 'block';
+
+            document.getElementById('toggle-aptos').addEventListener('click', function () {
+                const button = this;
+                const enabled = button.getAttribute('data-enabled') === 'true';
+                document.querySelectorAll('.apt').forEach(td => {
+                    const row = td.closest('tr');
+                    row.style.display = enabled ? 'none' : '';
+                });
+                button.setAttribute('data-enabled', (!enabled).toString());
+            });
+
+            document.getElementById('toggle-noaptos').addEventListener('click', function () {
+                const button = this;
+                const enabled = button.getAttribute('data-enabled') === 'true';
+                document.querySelectorAll('.no-apt').forEach(td => {
+                    const row = td.closest('tr');
+                    row.style.display = enabled ? 'none' : '';
+                });
+                button.setAttribute('data-enabled', (!enabled).toString());
+            });
         }
 
         function prepararDescarga(data) {
