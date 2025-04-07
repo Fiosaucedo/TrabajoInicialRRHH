@@ -16,8 +16,8 @@ Mediante un entrenamiento previo con datos de candidatos ya evaluados, el modelo
 
 Situados en la raíz del proyecto: 
 
-*´pip install -r requirements.txt´
-*´python3.12 src/api.py´
+* pip install -r requirements.txt
+* python3.12 src/api.py
 
 ## Uso
 Una vez en la página de la aplicación, veremos la siguiente pantalla de inicio:
